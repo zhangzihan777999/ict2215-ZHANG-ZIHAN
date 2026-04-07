@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONLY HENAN | A Land of Drama</title>
+    <style>
+        /* --- Reset & Base Styles --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif; /* Serif for a more literary/historic feel */
+            background-color: #f7f5f0; /* Warm paper color */
+            color: #2c2c2c;
+            line-height: 1.8;
+        }
+
+        /* --- Typography & Colors --- */
+        :root {
+            --earth-brown: #8c7b70; /* Rammed earth color */
+            --wheat-gold: #c5a065;
+            --dark-text: #1a1a1a;
+            --light-text: #666;
+            --white: #ffffff;
+        }
+
+        h1, h2, h3 { font-weight: 700; letter-spacing: -0.5px; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+        /* --- Navigation --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 25px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(247, 245, 240, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .logo {
+            color: var(--dark-text);
+            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-family: 'Helvetica Neue', sans-serif; /* Sans-serif for logo contrast */
+        }
+
+        .logo span { color: var(--wheat-gold); }
+
+        .nav-links a {
+            color: var(--dark-text);
+            margin-left: 30px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+
+        .nav-links a:hover { color: var(--wheat-gold); }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('img/hn1.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 5rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            line-height: 1.1;
+            font-family: 'Helvetica Neue', sans-serif;
+            letter-spacing: -1px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            color: #eee;
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            background-color: var(--wheat-gold);
+            color: #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid var(--wheat-gold);
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--wheat-gold);
+        }
+
+        /* --- Philosophy Section --- */
+        .philosophy {
+            padding: 100px 10%;
+            background-color: var(--white);
+            text-align: center;
+        }
+
+        .philosophy h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--dark-text);
+        }
+
+        .philosophy p {
+            font-size: 1.1rem;
+            color: var(--light-text);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* --- Theaters Grid --- */
+        .theaters {
+            padding: 100px 10%;
+            background-color: #f0ede5;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--dark-text);
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: var(--light-text);
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 40px;
+            border-left: 5px solid var(--earth-brown);
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-left: 5px solid var(--wheat-gold);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--dark-text);
+        }
+
+        .card p {
+            color: var(--light-text);
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .card-tag {
+            display: inline-block;
+            padding: 5px 15px;
+            background-color: #f7f5f0;
+            color: var(--earth-brown);
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+
+        /* --- Quote Section --- */
+        .quote {
+            padding: 100px 10%;
+            background-color: var(--earth-brown);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .quote blockquote {
+            font-size: 2rem;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.4;
+        }
+
+        .quote cite {
+            display: block;
+            margin-top: 30px;
+            font-size: 1rem;
+            font-style: normal;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: 'Helvetica Neue', sans-serif;
+            color: var(--wheat-gold);
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 3rem; }
+            .philosophy { padding: 60px 20px; }
+            .theaters { padding: 60px 20px; }
+            .quote { padding: 80px 20px; }
+            nav { padding: 20px; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">ONLY<span>.HENAN</span></div>
+        <div class="nav-links">
+            <a href="index.html">Go Back</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>A City of<br>Drama</h1>
+            <p>The world's largest dramatic cluster. A journey through 5,000 years of Henan's soul, built from rammed earth and wheat.</p>
+            <a href="#theaters" class="btn">Enter the City of Fantasy</a>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section id="about" class="philosophy">
+        <h2>More Than a Theme Park</h2>
+        <p>Designed by the renowned architect Wang Chaoge, "Only Henan" is not just a tourist destination—it is a meditation on land, history, and the people of the Central Plains. The entire complex is constructed with rammed earth, creating a labyrinth of walls that tells the story of Chinese civilization.</p>
+    </section>
+
+    <!-- Theaters Grid -->
+    <section id="theaters" class="theaters">
+        <div class="section-header">
+            <h2>The Theaters</h2>
+            <p>Immersive experiences that blur the line between audience and performer</p>
+        </div>
+        
+        <div class="grid">
+            <!-- Theater 1 -->
+            <div class="card">
+                <span class="card-tag">Main Feature</span>
+                <h3>The Red Rice Theater</h3>
+                <p>A grand narrative spanning centuries. Witness the struggles and triumphs of the people of the Central Plains, centered around the story of a bowl of rice and the cycles of life.</p>
+            </div>
+
+            <!-- Theater 2 -->
+            <div class="card">
+                <span class="card-tag">Immersive</span>
+                <h3>The Railway Station Theater</h3>
+                <p>Step back into the 1930s. This theater recreates a bustling railway station during wartime, allowing you to walk through history and interact with the characters.</p>
+            </div>
+
+            <!-- Theater 3 -->
+            <div class="card">
+                <span class="card-tag">Visual Spectacle</span>
+                <h3>The Fantasy City</h3>
+                <p>An open-air theatrical experience where the architecture itself is the stage. The high rammed earth walls create a maze of light, shadow, and history.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote">
+        <blockquote>
+            "The earth is the stage, and history is the script."
+        </blockquote>
+        <cite>— Wang Chaoge, Chief Director</cite>
+    </section>
+
+</body>
+</html>

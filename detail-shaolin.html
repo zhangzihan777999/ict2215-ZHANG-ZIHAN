@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaolin Temple | The Zen Soul</title>
+    <style>
+        /* --- Reset & Base Styles --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        /* --- Typography & Colors --- */
+        :root {
+            --temple-red: #8a1c1c; /* Deep vermilion red */
+            --ink-black: #1a1a1a;
+            --stone-gray: #888888;
+            --paper-white: #ffffff;
+        }
+
+        h1, h2, h3 { font-weight: 700; letter-spacing: -0.5px; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+        /* --- Navigation --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 25px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .logo {
+            color: var(--paper-white);
+            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .logo span { color: var(--temple-red); }
+
+        .nav-links a {
+            color: var(--paper-white);
+            margin-left: 30px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a:hover { color: var(--temple-red); }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 90vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('img/sls1.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--paper-white);
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 5rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            line-height: 1;
+            font-weight: 900;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            color: #ddd;
+            font-weight: 300;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            background-color: var(--temple-red);
+            color: #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid var(--temple-red);
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--temple-red);
+            border-color: var(--temple-red);
+        }
+
+        /* --- Intro Section --- */
+        .intro {
+            padding: 100px 10%;
+            background-color: var(--paper-white);
+            text-align: center;
+        }
+
+        .intro h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--ink-black);
+        }
+
+        .intro p {
+            font-size: 1.1rem;
+            color: var(--stone-gray);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* --- Highlights Grid --- */
+        .highlights {
+            padding: 80px 10%;
+            background-color: #f9f9f9;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 40px;
+            border-top: 4px solid var(--ink-black);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-top: 4px solid var(--temple-red);
+        }
+
+        .card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--ink-black);
+        }
+
+        .card p {
+            color: var(--stone-gray);
+            margin-bottom: 20px;
+        }
+
+        .icon {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        /* --- Quote Section --- */
+        .quote-section {
+            padding: 100px 10%;
+            background-color: var(--ink-black);
+            color: var(--paper-white);
+            text-align: center;
+        }
+
+        .quote-section blockquote {
+            font-size: 2rem;
+            font-style: italic;
+            font-weight: 300;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.4;
+        }
+
+        .quote-section cite {
+            display: block;
+            margin-top: 30px;
+            font-size: 1rem;
+            color: var(--temple-red);
+            font-style: normal;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 3rem; }
+            .intro { padding: 60px 20px; }
+            .highlights { padding: 60px 20px; }
+            .quote-section { padding: 80px 20px; }
+            nav { padding: 20px; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Shaolin<span>.Temple</span></div>
+        <div class="nav-links">
+            <a href="index.html">Go Back</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>The Zen Soul<br>Of China</h1>
+            <p>Where martial arts meet spirituality. A journey into the heart of the Songshan Mountains.</p>
+            <a href="#intro" class="btn">Enter the Temple</a>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section id="intro" class="intro">
+        <h2>A Sanctuary of Peace & Power</h2>
+        <p>Located on the western side of Songshan Mountain in Dengfeng, the Shaolin Temple is not just a tourist destination—it is a pilgrimage site for martial artists worldwide. Established in 495 AD, it is the birthplace of Zen Buddhism and the cradle of Shaolin Kung Fu.</p>
+    </section>
+
+    <!-- Highlights Grid -->
+    <section class="highlights">
+        <div class="grid">
+            <!-- Card 1 -->
+            <div class="card">
+                <span class="icon">⛩️</span>
+                <h3>The Ancient Architecture</h3>
+                <p>Walk through the <strong>Shanhaiguan Gate</strong> and the <strong>Mahavira Hall</strong>. The temple complex is filled with steles, murals, and ancient cypress trees that have witnessed over 1,500 years of history.</p>
+            </div>
+            <!-- Card 2 -->
+            <div class="card">
+                <span class="icon">🥋</span>
+                <h3>Shaolin Kung Fu</h3>
+                <p>Witness the legendary martial arts performances. The monks' movements are a blend of physical strength and Zen philosophy—fast as the wind, steady as the mountain.</p>
+            </div>
+            <!-- Card 3 -->
+            <div class="card">
+                <span class="icon">🧘</span>
+                <h3>Zen Meditation</h3>
+                <p>Beyond the fighting, Shaolin is a place of worship. Experience the silence of the meditation halls and learn about Bodhidharma, the founder of Zen.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote-section">
+        <blockquote>
+            "All martial arts under heaven originate from Shaolin."
+        </blockquote>
+        <cite>— Chinese Proverb</cite>
+    </section>
+</body>
+</html>

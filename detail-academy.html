@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Songyang Academy | The Voice of Confucianism</title>
+    <style>
+        /* --- Reset & Base Styles --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif; /* Serif for literary feel */
+            background-color: #f9f9f7; /* Rice paper color */
+            color: #2c2c2c;
+            line-height: 1.8;
+        }
+
+        /* --- Typography & Colors --- */
+        :root {
+            --ink-black: #1a1a1a;
+            --cinnabar-red: #a83232; /* Seal red */
+            --slate-gray: #5a5a5a;
+            --paper-white: #f9f9f7;
+        }
+
+        h1, h2, h3 { font-weight: 700; letter-spacing: -0.5px; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+        /* --- Navigation --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 25px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(249, 249, 247, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .logo {
+            color: var(--ink-black);
+            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+
+        .logo span { color: var(--cinnabar-red); }
+
+        .nav-links a {
+            color: var(--ink-black);
+            margin-left: 30px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+
+        .nav-links a:hover { color: var(--cinnabar-red); }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 90vh;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('img/sy2.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--paper-white);
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 4.5rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            line-height: 1.2;
+            font-family: 'Helvetica Neue', sans-serif;
+            letter-spacing: 2px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            color: #ddd;
+            font-family: 'Helvetica Neue', sans-serif;
+            font-weight: 300;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            background-color: var(--cinnabar-red);
+            color: #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid var(--cinnabar-red);
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--cinnabar-red);
+        }
+
+        /* --- Intro Section --- */
+        .intro {
+            padding: 100px 10%;
+            background-color: var(--paper-white);
+            text-align: center;
+        }
+
+        .intro h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--ink-black);
+        }
+
+        .intro p {
+            font-size: 1.1rem;
+            color: var(--slate-gray);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* --- Highlights Grid --- */
+        .highlights {
+            padding: 80px 10%;
+            background-color: #f0f0f0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 40px;
+            border-top: 4px solid var(--ink-black);
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-top: 4px solid var(--cinnabar-red);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--ink-black);
+        }
+
+        .card p {
+            color: var(--slate-gray);
+            margin-bottom: 20px;
+        }
+
+        .icon {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            display: block;
+            color: var(--cinnabar-red);
+        }
+
+        /* --- History/Quote Section --- */
+        .history {
+            padding: 100px 10%;
+            background-color: var(--ink-black);
+            color: var(--paper-white);
+            text-align: center;
+        }
+
+        .history blockquote {
+            font-size: 1.8rem;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            font-family: 'Georgia', serif;
+        }
+
+        .history cite {
+            display: block;
+            margin-top: 30px;
+            font-size: 1rem;
+            font-style: normal;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: 'Helvetica Neue', sans-serif;
+            color: var(--cinnabar-red);
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 3rem; }
+            .intro { padding: 60px 20px; }
+            .highlights { padding: 60px 20px; }
+            .history { padding: 80px 20px; }
+            nav { padding: 20px; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Songyang<span>.Academy</span></div>
+        <div class="nav-links">
+            <a href="index.html">Go Back</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>The Sanctuary<br>Of Wisdom</h1>
+            <p>Nestled at the foot of Songshan Mountain, this is where Confucian scholars sought the truth for over a thousand years.</p>
+            <a href="#intro" class="btn">Discover History</a>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section id="intro" class="intro">
+        <h2>One of the Four Great Academies</h2>
+        <p>Established in 484 AD, the Songyang Academy is a masterpiece of traditional Chinese architecture and a symbol of the Confucian spirit. It served as a premier institution for higher learning, attracting great scholars like the Neo-Confucian masters Cheng Hao and Cheng Yi.</p>
+    </section>
+
+    <!-- Highlights Grid -->
+    <section class="highlights">
+        <div class="grid">
+            <!-- Card 1 -->
+            <div class="card">
+                <span class="icon">🌲</span>
+                <h3>The General's Cypress</h3>
+                <p>Witness the "General's Cypress" (General Bai), an ancient cypress tree over 4,500 years old. Its twisted branches tell the story of time, standing as a living fossil of the academy.</p>
+            </div>
+            <!-- Card 2 -->
+            <div class="card">
+                <span class="icon">📜</span>
+                <h3>Confucian Heritage</h3>
+                <p>Explore the lecture halls where the "Cheng-Zhu School" of philosophy was born. The academy was a cradle for Neo-Confucianism, influencing Chinese thought for centuries.</p>
+            </div>
+            <!-- Card 3 -->
+            <div class="card">
+                <span class="icon">🏛️</span>
+                <h3>Imperial Steles</h3>
+                <p>Admire the massive steles, including the "Stele of Imperial Conferring," which stands as a testament to the high status the academy held in the eyes of emperors.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- History/Quote Section -->
+    <section class="history">
+        <blockquote>
+            "The Academy is the vessel of the Way; the mountain is the home of the spirit."
+        </blockquote>
+        <cite>— Traditional Chinese Proverb</cite>
+    </section>
+
+</body>
+</html>
